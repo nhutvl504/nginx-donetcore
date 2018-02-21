@@ -1,0 +1,5 @@
+/home/ubuntu/project/nginx-donetcore/App
+--output-path=obj/Release/netcoreapp2.0/
+--application-name=app
+--content-root=/home/ubuntu/project/nginx-donetcore/App
+--file=
