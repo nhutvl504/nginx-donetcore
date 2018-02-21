@@ -1,0 +1,19 @@
+machine:
+  services:
+    - docker
+general:
+  artifacts:
+    - "app"
+dependencies:
+  post:
+    - docker build -t $DEV_AWS_ECR_URI:1.0.0 .
+test:
+  pre:
+    - aws configure list
+  override:
+    - echo "done "
+deployment:
+  prod:
+    branch: master
+    commands:
+      - sh ./push-ecr.sh
