@@ -7,6 +7,7 @@ WORKDIR /app
 COPY App/ .
 RUN  dotnet restore
 RUN  dotnet publish -c Release -o out
+RUN pwd && ls -lsa
 COPY App/bin/Release/netcoreapp2.0/ .  
  
 COPY ./startup.sh .
