@@ -17,3 +17,5 @@ deployment:
     branch: master
     commands:
       - sh ./push-ecr.sh
+      - bash ./ecs-deploy -k $AWS_ACCESS_KEY_ID -s $AWS_SECRET_ACCESS_KEY -r $AWS_DEFAULT_REGION -c TestCI -d "BuildAppChat" -i $DEV_AWS_ECR_URI:$CIRCLE_BUILD_NUM
+
