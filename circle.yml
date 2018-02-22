@@ -6,7 +6,7 @@ general:
     - "app"
 dependencies:
   post:
-    - docker build -t $DEV_AWS_ECR_URI:1.0.0 .
+    - docker build -t $DEV_AWS_ECR_URI:$CIRCLE_BUILD_NUM .
 test:
   pre:
     - aws configure list
